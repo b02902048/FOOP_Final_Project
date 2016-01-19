@@ -36,8 +36,8 @@ public class Server {
             inStream = null;
 
             try{
-                address[count] = InetAddress.getByName(args[count]);
-                socket[count] = new Socket(address[count].getHostAddress(), 4445+count);
+                //address[count] = InetAddress.getByName(args[count]);
+                socket[count] = new Socket(args[count], 4445+count);
                 outputStream = new ObjectOutputStream(socket[count].getOutputStream());
                 Test test = new Test(count);
                 System.out.println("Object sent " + test);
