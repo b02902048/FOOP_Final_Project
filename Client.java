@@ -20,7 +20,7 @@ public class Client {
     public void communicate(String host, int id) {
 
         try{
-            serverSocket = new ServerSocket(4445+id);
+            serverSocket = new ServerSocket(5445+id);
         } catch (SocketException se) {
             se.printStackTrace();
             // System.exit(0);
@@ -50,8 +50,8 @@ public class Client {
 
             while(true){
                 try {
-                    InetAddress address = InetAddress.getByName(host);
-                    socket1 = new Socket(address.getHostAddress(), 4445+id);
+                    //InetAddress address = InetAddress.getByName(host);
+                    socket1 = new Socket(host, 4445+id);
                     outputStream = new ObjectOutputStream(socket1.getOutputStream());
                     Scanner scanner = new Scanner(System.in);
                     int input = scanner.nextInt();
