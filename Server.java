@@ -37,7 +37,7 @@ public class Server {
 
             try{
                 //address[count] = InetAddress.getByName(args[count]);
-                socket[count] = new Socket(args[count], 4445+count);
+                socket[count] = new Socket(args[count], 5445+count);
                 outputStream = new ObjectOutputStream(socket[count].getOutputStream());
                 Test test = new Test(count);
                 System.out.println("Object sent " + test);
@@ -68,7 +68,7 @@ public class Server {
                 cn.printStackTrace();
             }
             
-            count = (count+1)%2;
+            //count = (count+1)%2;
         }
     }
 
